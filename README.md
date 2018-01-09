@@ -11,7 +11,12 @@ These algorithm complexity o() are big (exponential in N when the maze in an N*N
 
 ![alt text](https://raw.githubusercontent.com/janohhank/Labyrinth-generator-solver/master/doc/example.png)
 
-red - labyrinth frame, walls
-blue - starting position
-green - exit position and a good solution
-red - dead-ends the algorithm tried these
+red line - labyrinth frame, walls
+
+blue line - starting position
+
+green line - exit position
+
+green pentagon - path of good solution
+
+red pentagon - dead-ends the algorithm tried these paths
