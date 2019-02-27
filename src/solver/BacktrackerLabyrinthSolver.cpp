@@ -60,14 +60,10 @@ std::pair<unsigned int, unsigned int> BacktrackerLabyrinthSolver::getNextCoordin
 ){
 	std::set<DirectionType> possibleDirections = getPossibleDirections(labyrinth, visitedCoordinates.back());
 	while(!possibleDirections.empty()){
-		std::set<DirectionType>::iterator direction;
-		if(RANDOM_DIRECTION_CHOOSE){
-			//TODO
-		}else{
-			direction = possibleDirections.begin();
-		}
+		// This direction choose mechanism can be a strategy pattern (random, or some logic based).
+		std::set<DirectionType>::iterator direction = possibleDirections.begin();
 
-		const std::pair<unsigned int, unsigned int> candidate =
+		const std::pair<unsigned int, unsigned int>& candidate =
 			getCandidatePositionAccordingToDirection(
 				visitedCoordinates.back(),
 				*direction

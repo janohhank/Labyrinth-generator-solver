@@ -26,12 +26,10 @@ void LabyrinthRenderer::drawLabyrinth(){
 	//Clear the color buffer (background).
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	//
 	const float scaleFactor = 10.0f;
 	const float offsetRectangle = 0.1f;
 	const float offsetRectangleWidth = 0.002;
 
-	//
 	std::tuple<float,float,float> rgb;
 
 	glPushMatrix();
@@ -41,8 +39,8 @@ void LabyrinthRenderer::drawLabyrinth(){
 		iterator != labyrinthFieldMap.cend();
 		++iterator
 	){
-		const float y = static_cast<float>(iterator->first.first) / scaleFactor;
-		const float x = static_cast<float>(iterator->first.second) / scaleFactor;
+		const float& y = static_cast<float>(iterator->first.first) / scaleFactor;
+		const float& x = static_cast<float>(iterator->first.second) / scaleFactor;
 
 		if(iterator->second.getFieldType() == LabyrinthFieldType::ENTRANCE){
 			rgb = {0.0f,0.0,1.0f};
@@ -116,8 +114,8 @@ void LabyrinthRenderer::drawLabyrinth(){
 		iterator != labyrinthPathMap.cend();
 		++iterator
 	){
-		const float y = static_cast<float>(iterator->first.first) / scaleFactor;
-		const float x = static_cast<float>(iterator->first.second) / scaleFactor;
+		const float& y = static_cast<float>(iterator->first.first) / scaleFactor;
+		const float& x = static_cast<float>(iterator->first.second) / scaleFactor;
 
 		if(iterator->second == LabyrinthPathType::GOOD_PATH){
 			rgb = {0.0f,1.0,0.0f};

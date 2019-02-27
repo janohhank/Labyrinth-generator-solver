@@ -9,14 +9,13 @@
 
 namespace labyrinth{
 
-Labyrinth::Labyrinth(const unsigned int height, unsigned int width){
+Labyrinth::Labyrinth(
+	const unsigned int& height,
+	const unsigned int& width
+) : height(height), width(width){
 	if(height < 2 || width < 2){
 		throw std::logic_error("The labyrinth size must be greater then 2x2!");
 	}
-
-	//Sets the size parameters.
-	this->height = height;
-	this->width = width;
 
 	//Initialize the labyrinth maps.
 	for(unsigned int y = 0; y < height; ++y){
@@ -125,7 +124,7 @@ void Labyrinth::generate(
 	//Already visited cells counter.
 	unsigned int visitedFields = 1;
 	//Total fields of the maze.
-	const unsigned int totalFields = (width) * (height);
+	const unsigned int& totalFields = (width) * (height);
 	//The possible next directions.
 	std::vector<DirectionType> possibleDirections;
 	//The visited fields stack.
@@ -135,8 +134,8 @@ void Labyrinth::generate(
 
 	//Main generation loop.
 	while(visitedFields < totalFields){
-		const unsigned int x = currentPosition.second;
-		const unsigned int y = currentPosition.first;
+		const unsigned int& x = currentPosition.second;
+		const unsigned int& y = currentPosition.first;
 
 		auto&& currentField = labyrinthFieldMap.find({y, x})->second;
 
@@ -223,7 +222,7 @@ void Labyrinth::setRandomEntranceAndExit(){
 	std::uniform_int_distribution<unsigned int> uniformDistributionWidth(1, width - 2);
 	std::uniform_int_distribution<unsigned int> uniformDistributionHeigth(1, height - 2);
 
-	const auto directions = getRandomDirections();
+	const auto& directions = getRandomDirections();
 	switch(*directions.begin()){
 		case DirectionType::UP:
 			labyrinthFieldMap.find(

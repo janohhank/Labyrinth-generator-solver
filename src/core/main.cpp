@@ -10,12 +10,13 @@
 #include "../inc/gui/LabyrinthRenderer.h"
 #include "../inc/solver/BacktrackerLabyrinthSolver.h"
 
+using namespace std;
 using namespace labyrinth;
 
 /*
 * Program static renderer instance.
 */
-std::unique_ptr<LabyrinthRenderer> renderer = std::make_unique<LabyrinthRenderer>();
+unique_ptr<LabyrinthRenderer> renderer = make_unique<LabyrinthRenderer>();
 
 /*
 * OpenGL "glutDisplayFunc" callback implementation.
@@ -32,8 +33,8 @@ int main(int argc, char** argv){
 	const unsigned int LABYRINTH_WIDTH = 10;
 
 	//Initialize the labyrinth.
-	const std::unique_ptr<Labyrinth> labyrinth = std::make_unique<Labyrinth>(LABYRINTH_HEIGHT, LABYRINTH_WIDTH);
-	const std::unique_ptr<LabyrinthSolverBase> labyrinthBacktracer = std::make_unique<BacktrackerLabyrinthSolver>();
+	const unique_ptr<Labyrinth> labyrinth = make_unique<Labyrinth>(LABYRINTH_HEIGHT, LABYRINTH_WIDTH);
+	const unique_ptr<LabyrinthSolverBase> labyrinthBacktracer = make_unique<BacktrackerLabyrinthSolver>();
 
 	//Solve labyrinth with backtracking.
 	labyrinthBacktracer->solveLabyrinth(

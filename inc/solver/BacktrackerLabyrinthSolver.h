@@ -14,11 +14,6 @@ namespace labyrinth{
 ** @author Kisházi "janohhank" János
 **/
 class BacktrackerLabyrinthSolver final : public LabyrinthSolverBase{
-	private:
-		/*
-		* Next direction choosing random or vector position based.
-		*/
-		const bool RANDOM_DIRECTION_CHOOSE = false;
 	public:
 		/**
 		** Constructs a new instance.

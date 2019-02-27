@@ -39,6 +39,6 @@ bool LabyrinthField::isDeadEnd() const{
 	}else{
 		return false;
 	}
-} 
+}
 
 }

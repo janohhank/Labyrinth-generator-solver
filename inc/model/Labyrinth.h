@@ -35,15 +35,15 @@ class Labyrinth final{
 		/*
 		* Labyrinth size parameters.
 		*/
-		unsigned int height;
-		unsigned int width;
+		const unsigned int height;
+		const unsigned int width;
 	public:
 		/**
 		** Constructs a new instance, and constructs the labyrinth map.
 		** @param height, the labyrinth height.
 		** @param width, the labyrinth width.
 		**/
-		Labyrinth(const unsigned int height, unsigned int width);
+		Labyrinth(const unsigned int& height, const unsigned int& width);
 
 		/**
 		** Simple NOOP destructor.
