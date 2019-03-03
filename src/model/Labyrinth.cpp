@@ -1,9 +1,9 @@
 #include "../inc/model/Labyrinth.h"
 
-//Labyrinth project includes.
+// Labyrinth project includes.
 #include "../inc/utility/Utility.hpp"
 
-//STD includes.
+// STL includes.
 #include <stack>
 #include <vector>
 
@@ -13,11 +13,11 @@ Labyrinth::Labyrinth(
 	const unsigned int& height,
 	const unsigned int& width
 ) : height(height), width(width){
-	if(height < 2 || width < 2){
-		throw std::logic_error("The labyrinth size must be greater then 2x2!");
+	if(height < 4 || width < 4){
+		throw std::logic_error("The labyrinth size must be greater then 4x4!");
 	}
 
-	//Initialize the labyrinth maps.
+	// Initialize the labyrinth maps.
 	for(unsigned int y = 0; y < height; ++y){
 		for(unsigned int x = 0; x < width; ++x){
 			labyrinthFieldMap.emplace(std::make_pair(y,x), LabyrinthField());
@@ -25,10 +25,10 @@ Labyrinth::Labyrinth(
 		}
 	}
 
-	//Sets the entrance and the exit fields.
+	// Sets the entrance and the exit fields.
 	setRandomEntranceAndExit();
 
-	//Generate a random maze.
+	// Generate a random maze.
 	generateMaze();
 }
 
@@ -114,25 +114,25 @@ std::map<std::pair<unsigned int, unsigned int>, LabyrinthPathType> Labyrinth::ge
 }
 
 void Labyrinth::generateMaze(){
-	//The generation starts from the entrance coordinates.
+	// The generation starts from the entrance coordinates.
 	generate(getEntranceCoordinates());
 }
 
 void Labyrinth::generate(
 	const std::pair<unsigned int, unsigned int>& position
 ){
-	//Already visited cells counter.
+	// Already visited cells counter.
 	unsigned int visitedFields = 1;
-	//Total fields of the maze.
+	// Total fields of the maze.
 	const unsigned int& totalFields = (width) * (height);
-	//The possible next directions.
+	// The possible next directions.
 	std::vector<DirectionType> possibleDirections;
-	//The visited fields stack.
+	// The visited fields stack.
 	std::stack<std::pair<unsigned int, unsigned int>> visitedPositions;
-	//Current examined field position.
+	// Current examined field position.
 	std::pair<unsigned int, unsigned int> currentPosition = {position.first, position.second};
 
-	//Main generation loop.
+	// Main generation loop.
 	while(visitedFields < totalFields){
 		const unsigned int& x = currentPosition.second;
 		const unsigned int& y = currentPosition.first;
@@ -144,7 +144,7 @@ void Labyrinth::generate(
 		auto&& rightField = labyrinthFieldMap.find({y, x + 1})->second;
 		auto&& upField = labyrinthFieldMap.find({y - 1, x})->second;
 
-		//Get possible next directions.
+		// Get possible next directions.
 		if(x < width - 1){
 			if(rightField.isDeadEnd()){
 				possibleDirections.emplace_back(DirectionType::RIGHT);
@@ -169,7 +169,7 @@ void Labyrinth::generate(
 			}
 		}
 
-		//Choose a random direction and construct the maze.
+		// Choose a random direction and construct the maze.
 		if(!possibleDirections.empty()){
 			const auto& direction = possibleDirections.at(rand() % possibleDirections.size());
 

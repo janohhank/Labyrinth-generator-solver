@@ -1,10 +1,10 @@
 #pragma once
 
-//Labyrinth project includes.
+// Labyrinth project includes.
 #include "LabyrinthFieldType.h"
 #include "../utility/DirectionType.h"
 
-//STD includes.
+// STL includes.
 #include <set>
 
 namespace labyrinth{

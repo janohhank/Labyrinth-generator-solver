@@ -1,11 +1,11 @@
 #pragma once
 
-//Labyrinth project includes.
+// Labyrinth project includes.
 #include "LabyrinthField.h"
 #include "LabyrinthPathType.h"
 #include "NoSuchLabyrinthCoordinatesExcpetion.hpp"
 
-//STD includes.
+// STL includes.
 #include <map>
 
 namespace labyrinth{

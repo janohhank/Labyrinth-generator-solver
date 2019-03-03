@@ -1,9 +1,9 @@
 #pragma once
 
-//Labyrinth project includes.
+// Labyrinth project includes.
 #include "LabyrinthSolverBase.h"
 
-//STD includes
+// STL includes
 #include <vector>
 
 namespace labyrinth{

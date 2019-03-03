@@ -23,7 +23,7 @@ void LabyrinthRenderer::receiveLabyrinthMapAndSolution(
 void LabyrinthRenderer::drawLabyrinth(){
 	std::lock_guard<std::mutex> lock(dataMutex);
 
-	//Clear the color buffer (background).
+	// Clear the color buffer (background).
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	const float scaleFactor = 10.0f;

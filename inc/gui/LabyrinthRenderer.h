@@ -1,13 +1,13 @@
 #pragma once
 
-//Labyrinth project includes.
+// Labyrinth project includes.
 #include "../model/LabyrinthField.h"
 #include "../model/LabyrinthPathType.h"
 
-//OpenGL includes.
+// OpenGL includes.
 #include <GL/glut.h>
 
-//STD includes.
+// STL includes.
 #include <map>
 #include <mutex>
 

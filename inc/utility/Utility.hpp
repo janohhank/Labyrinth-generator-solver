@@ -1,9 +1,9 @@
 #pragma once
 
-//Labyrinth project includes.
+// Labyrinth project includes.
 #include "DirectionType.h"
 
-//STD includes.
+// STL includes.
 #include <random>
 #include <algorithm>
 

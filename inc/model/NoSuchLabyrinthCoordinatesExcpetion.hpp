@@ -1,6 +1,6 @@
 #pragma once
 
-//STD includes.
+// STL includes.
 #include <string>
 #include <stdexcept>
 
