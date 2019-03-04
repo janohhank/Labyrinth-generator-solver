@@ -46,10 +46,10 @@ void print(
 ** Example usage information.
 **/
 void usage(char *argv[]){
-	cout << "[" << argv[0] << "]" << " Requires the following arguments:" << " LABIRYNTH_HEIGHT" << " LABIRYNTH_WIDTH" << endl
+	cout << "[" << argv[0] << "]" << " Requires the following arguments:" << " LABYRiNTH_HEIGHT" << " LABYRiNTH_WIDTH" << endl
 	<< "	Where: " << endl
-	<< "		LABIRYNTH_HEIGHT is the required labyrinth discrete height size. It can be [4,10]." << endl
-	<< "		LABIRYNTH_WIDTH is the required labyrinth discrete width size. It can be [4,10]." << endl;
+	<< "		LABYRiNTH_HEIGHT is the required labyrinth discrete height size. It can be [4,10]." << endl
+	<< "		LABYRiNTH_WIDTH is the required labyrinth discrete width size. It can be [4,10]." << endl;
 }
 
 /*
