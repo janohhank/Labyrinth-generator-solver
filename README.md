@@ -6,9 +6,9 @@ This project is just a simple practice how to implement a random labyrinth creat
 **Build**
 
 CMake based build with OpenGL dependency. Tested in:
-    - Debian Stretch, CMake version 3.7.2
-    - Apple, TODO
-    - Windows, TODO
+ - Debian Stretch, CMake version 3.7.2, g++ version 6.3.0
+ - Apple, TODO
+ - Windows, TODO
 
 ## Math
 Used backtracking type of algorithms for the labyrinth creation and soling.
