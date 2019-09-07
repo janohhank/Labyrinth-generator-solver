@@ -1,5 +1,6 @@
 #include "../inc/gui/LabyrinthRenderer.h"
 
+#include <iostream>
 namespace labyrinth{
 
 LabyrinthRenderer::LabyrinthRenderer(){
@@ -28,7 +29,7 @@ void LabyrinthRenderer::drawLabyrinth(){
 
 	const float scaleFactor = 10.0f;
 	const float offsetRectangle = 0.1f;
-	const float offsetRectangleWidth = 0.002;
+	const float offsetRectangleWidth = 0.005;
 
 	std::tuple<float,float,float> rgb;
 
@@ -63,7 +64,6 @@ void LabyrinthRenderer::drawLabyrinth(){
 						glVertex2f(offsetRectangle, 0);
 					glEnd();
 					glPopMatrix();
-					
 				break;
 				case DirectionType::DOWN:
 					glPushMatrix();
@@ -76,7 +76,6 @@ void LabyrinthRenderer::drawLabyrinth(){
 						glVertex2f(offsetRectangle, 0);
 					glEnd();
 					glPopMatrix();
-					
 				break;
 				case DirectionType::LEFT:
 					glPushMatrix();

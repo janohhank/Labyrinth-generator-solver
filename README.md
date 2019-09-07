@@ -3,6 +3,13 @@ Simple N*M labyrinth generator and solver with OpenGL display.
 
 This project is just a simple practice how to implement a random labyrinth creating and solving algorithm in C++ with cxx17 standards. Furthermore I want to create an OpenGL 2D renderer for this mini project.
 
+**Build**
+
+CMake based build with OpenGL dependency. Tested in:
+    - Debian Stretch, CMake version 3.7.2
+    - Apple, TODO
+    - Windows, TODO
+
 ## Math
 Used backtracking type of algorithms for the labyrinth creation and soling.
 

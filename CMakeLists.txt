@@ -1,4 +1,4 @@
-# Simple cmakelist file for c++ codes with OpenGL dependency.
+# Simple cmakelist file for C++ codes with OpenGL dependency.
 # @author Kisházi "janohhank" János
 
 CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
@@ -24,9 +24,11 @@ add_executable(Labyrinth ${SOURCES})
 #Link OpenGL libraries
 target_link_libraries(Labyrinth ${OPENGL_LIBRARIES} ${GLUT_LIBRARY})
 
-#Set compiler flags (c++17 required), GCC or Visual Studio c++
+#Set compiler flags (c++17 required), GCC or AppleClang or Visual Studio C++.
 if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
 	set(CMAKE_CXX_FLAGS "-std=c++17 -W -Wall -Wextra -pedantic")
 elseif("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
 	set(CMAKE_CXX_FLAGS "-std=c++17")
+elseif("${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")
+	set(CMAKE_CXX_FLAGS "-std=c++17 -W -Wall -Wextra -pedantic")
 endif()
