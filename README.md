@@ -7,6 +7,7 @@ This project is just a simple practice how to implement a random labyrinth creat
 
 CMake based build with OpenGL dependency. Tested in:
  - Debian Stretch, CMake version 3.7.2
+ - Ubuntu 18.04.3, CMake version 3.12.3
  - macOS Mojave 10.14.4, CMake version 3.14.3
 
 ## Math
